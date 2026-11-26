@@ -131,6 +131,8 @@ img:hover {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 60px;
+    align-items: center;
+    transform: translateY(100px);
     
 }
 .Funcionalidades img{
@@ -149,8 +151,10 @@ img:hover {
 
 
 
+
+
 .whatsapp-flutuante {
-    position: fixed;
+    
     right: 24px;
     bottom: 24px;
     z-index: 1000;
@@ -190,4 +194,8 @@ img:hover {
     background-color: #ffffff;
     color: #25d366;
     font-size: 17px;
+}
+
+.Contato{
+    justify-content: space-between;
 }
