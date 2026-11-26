@@ -1,0 +1,34 @@
+.Titulo {
+    display: flex;
+    justify-content: flex-start;
+    
+}
+nav{
+   display: flex;
+    justify-content: flex-end;
+    gap: 28px;
+    
+}
+nav a{
+    text-decoration: none;
+    color:#000000 ;
+}
+body{
+    /* margin: 30px;
+    padding: 30px; */
+    
+    background: linear-gradient(
+        120deg,
+        #1D2935,
+        #344454,
+        #0862A8
+    );
+}
+.Inicio{
+    background-color: white;
+}
+hr {
+    border: none;
+    height: 7px;
+    background-color: #42617C;
+}
