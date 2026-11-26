@@ -149,33 +149,61 @@ img:hover {
     transform: translateY(120px);
 }
 
-
-
-
 .Contato {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+    width: 100%;
+    box-sizing: border-box;
     padding: 40px 60px;
-    background-color: white;
+    background-color: #ffffff;
+}
+
+.Contato h5 {
+    margin: 0;
+    color: #1d2935;
 }
 
 .whatsapp-flutuante {
     position: static;
-
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
     padding: 14px 22px;
     border-radius: 35px;
-
     background-color: #25d366;
     color: #ffffff;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.whatsapp-flutuante:hover {
+    background-color: #1ebe5d;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.icone-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #25d366;
+    font-size: 17px;
+}
+
+@media (max-width: 600px) {
+    .Contato {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 30px 20px;
+    }
 }
