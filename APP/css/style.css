@@ -149,20 +149,45 @@ img:hover {
     transform: translateY(120px);
 }
 
-.Contato {
-    display: flex;
-    justify-content: space-between;
+.contato {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "esquerda direita"
+        "botao botao";
     align-items: center;
-    gap: 30px;
+    gap: 28px 40px;
     width: 100%;
+    min-height: 220px;
     box-sizing: border-box;
-    padding: 40px 60px;
-    background-color: #ffffff;
+    padding: 45px 5%;
+    background-color: #d9d9d9;
 }
 
-.Contato h5 {
+.contato-esquerda {
+    grid-area: esquerda;
+    justify-self: start;
+}
+
+.contato-esquerda h5 {
     margin: 0;
-    color: #1d2935;
+    color: #111111;
+}
+
+.contato-direita {
+    grid-area: direita;
+    justify-self: end;
+    text-align: right;
+    color: #111111;
+    font-weight: bold;
+}
+
+.contato-direita p {
+    margin: 0 0 18px;
+}
+
+.contato-direita p:last-child {
+    margin-bottom: 0;
 }
 
 .whatsapp-flutuante {
@@ -179,6 +204,8 @@ img:hover {
     text-decoration: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease, background-color 0.2s ease;
+    grid-area: botao;
+    justify-self: center;
 }
 
 .whatsapp-flutuante:hover {
@@ -200,10 +227,20 @@ img:hover {
 }
 
 @media (max-width: 600px) {
-    .Contato {
-        flex-direction: column;
-        justify-content: center;
+    .contato {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "esquerda"
+            "direita"
+            "botao";
+        justify-items: center;
         text-align: center;
         padding: 30px 20px;
+    }
+
+    .contato-esquerda,
+    .contato-direita {
+        justify-self: center;
+        text-align: center;
     }
 }
