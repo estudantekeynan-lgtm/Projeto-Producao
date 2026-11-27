@@ -140,6 +140,55 @@ INSERT INTO item_producao (id_ordem, id_produto, quantidade, turno_producao, sta
 
 
 
+-- SQL
+UPDATE produto
+SET preco = 48.00
+WHERE id_produto = 1;
+
+
+DELETE FROM item_producao
+WHERE id_producao = 5;
+
+
+-- DQL
+
+SELECT
+    op.id_ordem,
+    op.prioridade,
+    op.data_inicio,
+    op.prazo,
+    o.nome AS operador,
+    m.modelo AS maquina
+FROM ordem_producao op
+JOIN operadores o
+    ON o.id_operador = op.id_operador
+JOIN maquina m
+    ON m.id_maquina = op.id_maquina;
+
+
+-- TCL
+
+START TRANSACTION;
+
+INSERT INTO item_producao
+(id_ordem, id_produto, quantidade, turno_producao)
+VALUES
+(1, 2, 50, 'diurno');
+
+COMMIT;
 
 
 
+CREATE INDEX idx_ordem_data
+ON ordem_producao(data_inicio);
+
+CREATE INDEX idx_ordem_operador
+ON ordem_producao(id_operador);
+
+CREATE INDEX idx_item_produto
+ON item_producao(id_produto);
+
+EXPLAIN
+SELECT *
+FROM ordem_producao
+WHERE data_inicio = '2026-11-27';
